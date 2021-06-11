@@ -28,3 +28,5 @@ jobs:
         run: echo $INPUT_MYSECRET
       - name: Run a one-line script
         run: echo ${{ github.event.inputs.mysecret }}
+      - name: VARS
+        run: printenv 
