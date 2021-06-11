@@ -8,7 +8,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      my_secret:
+      mysecret:
         required: true
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,10 +25,6 @@ jobs:
 #           my_secret: ${{ inputs.my_secret }}
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo $INPUT_MY_SECRET
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: echo $INPUT_MYSECRET
+      - name: Run a one-line script
+        run: echo ${{ github.event.inputs.mysecret }}
