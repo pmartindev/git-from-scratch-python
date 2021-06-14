@@ -11,6 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: export VAR=$(cat <(echo "::add-mask::teststring"))
-      - name: Run a one-line script
-        run: echo "::add-mask::$WEBHOOK_TOKEN"
+        run: cat <(echo "::add-mask::teststring")
