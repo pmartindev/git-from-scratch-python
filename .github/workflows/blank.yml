@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env: 
-      FOO: "${{ github.event.inputs.WEBHOOK_TOKEN }}"
+      WEBHOOK_TOKEN: "${{ github.event.inputs.WEBHOOK_TOKEN }}"
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo "$FOO"
+        run: echo "$WEBHOOK_TOKEN"
