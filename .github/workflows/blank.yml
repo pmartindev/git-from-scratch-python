@@ -8,11 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env: 
-      WEBHOOK_TOKEN: "${{ github.event.inputs.WEBHOOK_TOKEN }}"
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo "$WEBHOOK_TOKEN"
+        run: export VAR=$(cat <(echo "::add-mask::teststring"))
       - name: Run a one-line script
         run: echo "::add-mask::$WEBHOOK_TOKEN"
