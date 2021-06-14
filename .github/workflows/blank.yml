@@ -2,7 +2,7 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      WEBHOOK_TOKEN:
+      FOO:
         required: true
         default: BAR
 jobs:
@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: cat <(echo "$WEBHOOK_TOKEN")
+        run: cat <(echo "${{ github.event.inputs.logLevel }}")
