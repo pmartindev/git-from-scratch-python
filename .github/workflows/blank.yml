@@ -7,7 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env: HIDDEN_VAR=${{ github.event.inputs.mysecret }}
+    env: 
+      FOO: ${{ github.event.inputs.mysecret }}
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
