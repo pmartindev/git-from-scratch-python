@@ -11,4 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: jq -r '.inputs.foo' $GITHUB_EVENT_PATH
+        run: echo $GITHUB_EVENT_PATH
+      - name: Run a one-line script
+        run: jq -r '.inputs.FOO' $GITHUB_EVENT_PATH
