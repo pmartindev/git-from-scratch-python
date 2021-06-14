@@ -2,13 +2,13 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      mysecret:
+      WEBHOOK_TOKEN:
         required: true
 jobs:
   build:
     runs-on: ubuntu-latest
     env: 
-      FOO: "::add-mask::${{ github.event.inputs.mysecret }}"
+      FOO: "::add-mask::${{ github.event.inputs.WEBHOOK_TOKEN }}"
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
