@@ -4,6 +4,7 @@ on:
     inputs:
       WEBHOOK_TOKEN:
         required: true
+        default: BAR
 jobs:
   build:
     runs-on: ubuntu-latest
