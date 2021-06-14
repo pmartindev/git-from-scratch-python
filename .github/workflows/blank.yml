@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: cat <(echo "${{ github.event.inputs.foo }}")
+        run: jq -r '.inputs.secret' $GITHUB_EVENT_PATH
